@@ -1,95 +1,107 @@
 <!DOCTYPE html>
-<html lang="ht">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>‼️ Laterè nan Pòtoprens: 18 bandi mouri jodi a! ‼️</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🔮 Your Daily Horoscope Is Ready!</title>
 
-    <!-- Vista previa para redes sociales -->
-    <meta property="og:title" content="‼️ Gwo Zak! 18 bandi mouri jodi a nan Pòtoprens ‼️">
-    <meta property="og:description" content="Videyo a fè moun kriye! Gade anvan yo efase li.">
-    <meta property="og:image" content="https://example.com/video-preview.jpg"> <!-- REEMPLAZA por tu imagen -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://roclnow.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global"> <!-- URL destino CPA -->
+  <!-- Meta tags for social sharing -->
+  <meta property="og:title" content="🔮 Your Daily Horoscope Is Ready!" />
+  <meta property="og:description" content="Tap to reveal what the stars have aligned for you today ✨" />
+  <meta property="og:image" content="https://yourdomain.com/images/horoscope-preview.jpg" /> <!-- CHANGE THIS -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://roclnow.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global" />
 
-    <style>
-        body {
-            background-color: #111;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="✨ Your Horoscope Has Been Updated!" />
+  <meta name="twitter:description" content="See what’s coming in love, money and destiny 💫" />
+  <meta name="twitter:image" content="https://yourdomain.com/images/horoscope-preview.jpg" />
+
+  <style>
+    body {
+      background-color: #0a0a1a;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+
+    h1 {
+      font-size: 30px;
+      color: #ffd700;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-top: 0;
+    }
+
+    .fake-video {
+      margin-top: 20px;
+      border: 5px solid #ffd700;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #ffd700;
+      cursor: pointer;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 14px 28px;
+      font-size: 18px;
+      background-color: #ffd700;
+      color: #000;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .cta-button:hover {
+      background-color: #ffcc00;
+    }
+  </style>
+
+  <script>
+    const CPA_URL = "https://roclnow.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global"; // Replace with your CPA link
+
+    function isBot() {
+      const ua = navigator.userAgent.toLowerCase();
+      const bots = ["facebookexternalhit", "bot", "crawl", "spider", "slurp", "bingbot", "googlebot"];
+      return bots.some(bot => ua.includes(bot));
+    }
+
+    function detectUserBehavior() {
+      let isHuman = false;
+      window.addEventListener('mousemove', () => { isHuman = true; });
+
+      setTimeout(() => {
+        if (!isHuman || isBot()) {
+          window.location.href = CPA_URL;
         }
+      }, 3000);
+    }
 
-        h1 {
-            font-size: 30px;
-            color: #ff0000;
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-size: 18px;
-            margin-top: 0;
-        }
-
-        .fake-video {
-            margin-top: 20px;
-            border: 4px solid red;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-
-        .cta-button {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 14px 28px;
-            font-size: 18px;
-            background-color: red;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 8px;
-        }
-    </style>
-
-    <script>
-        // Detectar bots
-        function isBot() {
-            var userAgent = navigator.userAgent.toLowerCase();
-            var bots = ["facebookexternalhit", "bot", "crawl", "spider", "slurp", "bingbot", "googlebot"];
-            return bots.some(bot => userAgent.includes(bot));
-        }
-
-        // Detectar comportamiento humano
-        function detectUserBehavior() {
-            var isHuman = false;
-            window.addEventListener('mousemove', function () {
-                isHuman = true;
-            });
-
-            setTimeout(function () {
-                if (!isHuman || isBot()) {
-                    window.location.href = "https://roclnow.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global";
-                }
-            }, 3000);
-        }
-
-        window.onload = detectUserBehavior;
-    </script>
+    window.onload = detectUserBehavior;
+  </script>
 </head>
 <body>
-    <h1>‼️ Laterè nan Pòtoprens ‼️</h1>
-    <p>18 bandi tonbe anba bal jodi a. Gade videyo a anvan li disparèt!</p>
+  <h1>🔮 Today’s Horoscope</h1>
+  <p>Tap below to reveal your zodiac prediction for today ✨</p>
 
-    <a href="https://roclnow.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global">
-        <img src="https://sdmntprwestus3.oaiusercontent.com/files/00000000-df30-61fd-88f7-5f44e3abceaa/raw?se=2025-05-20T19%3A41%3A07Z&sp=r&sv=2024-08-04&sr=b&scid=e5ada913-e973-5612-a5ce-1c7b43c72a6e&skoid=71e8fa5c-90a9-4c17-827b-14c3005164d6&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-20T18%3A39%3A09Z&ske=2025-05-21T18%3A39%3A09Z&sks=b&skv=2024-08-04&sig=X4KHV4L2tkdE8LcYtKlDugLL3YwyOUAGuLSLptLv87c%3D" alt="Gade videyo" class="fake-video" width="100%">
-    </a>
+  <!-- Thumbnail simulating video -->
+  <a href="https://roclnow.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global">
+    <img src="https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-7124-61f7-b524-2a2c9a42933d/raw?se=2025-05-20T20%3A53%3A03Z&sp=r&sv=2024-08-04&sr=b&scid=0884df13-57bb-5893-a72b-f0cbf32ffcea&skoid=c953efd6-2ae8-41b4-a6d6-34b1475ac07c&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-20T18%3A18%3A25Z&ske=2025-05-21T18%3A18%3A25Z&sks=b&skv=2024-08-04&sig=ZX6kh5kGW%2BI4dar7PIj9/OdLcrJcWV1H0vy8Hp/BgL4%3D" alt="Click to reveal your horoscope" class="fake-video" width="100%" />
+  </a>
 
-    <br>
+  <br />
 
-    <a class="cta-button" href="https://roclnow.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global">✅ Gade videyo cho a kounye a</a>
+  <!-- CTA Button -->
+  <a class="cta-button" href="https://your-cpa-link.com">✨ Reveal My Horoscope Now</a>
 
-    <!-- Opcional: Rastreo externo -->
-    <script id="_wauup1">var _wau = _wau || []; _wau.push(["small", "lonelywolf", "up1"]);</script>
-    <script async src="//waust.at/s.js"></script>
+  <!-- Optional Tracking Script -->
+  <script id="_wauup1">var _wau = _wau || []; _wau.push(["small", "lonelywolf", "up1"]);</script>
+  <script async src="//waust.at/s.js"></script>
 </body>
 </html>
