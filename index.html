@@ -1,83 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="auto">
 <head>
-  <meta charset="UTF-8">
-  <title>Verificando...</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Anti-bot básico -->
-  <script>
-    const blockedAgents = ["bot", "crawl", "spider", "facebookexternalhit", "WhatsApp"];
-    if (blockedAgents.some(b => navigator.userAgent.toLowerCase().includes(b))) {
-      document.write("Blocked");
-      throw new Error("Bot blocked");
-    }
-  </script>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bienvenido</title>
+  <meta name="description" content="Página de aterrizaje segura y aprobada para campañas.">
   <style>
     body {
-      margin: 0;
-      background: #000;
-      color: #fff;
-      font-family: sans-serif;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #222;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       height: 100vh;
-      text-align: center;
-      padding: 20px;
+      margin: 0;
     }
-    .msg {
-      font-size: 1.6rem;
-      line-height: 1.5;
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 480px;
+      width: 90%;
+    }
+    h1 {
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+    p {
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+    .cta-button {
+      background: #28a745;
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+      display: inline-block;
+      transition: background 0.3s ease;
+    }
+    .cta-button:hover {
+      background: #218838;
     }
   </style>
 </head>
 <body>
-  <div class="msg" id="message">Loading...</div>
+  <div class="container">
+    <h1 id="title"></h1>
+    <p id="text"></p>
+    <a id="cta" class="cta-button" href="https://www.profitableratecpm.com/y8e064uw?key=163aa1a229d900a8ded967f53b6a45ca" rel="nofollow noopener" target="_blank"></a>
+  </div>
 
   <script>
-    const messages = {
-      "en": "🔒 Verifying your secure connection...\nPlease wait a moment.",
-      "es": "🔒 Verificando tu conexión segura...\nPor favor espera un momento.",
-      "fr": "🔒 Vérification de votre connexion sécurisée...\nVeuillez patienter.",
-      "pt": "🔒 Verificando sua conexão segura...\nPor favor, aguarde.",
-      "de": "🔒 Verbindung wird überprüft...\nBitte warten.",
-      "default": "🔒 Checking connection...\nPlease wait..."
+    const translations = {
+      es: {
+        title: "¡Estás a un paso de algo increíble!",
+        text: "Haz clic abajo y descubre lo que otros ya disfrutan.",
+        cta: "Acceder Ahora"
+      },
+      en: {
+        title: "You're one step away from something amazing!",
+        text: "Click below to see what everyone is enjoying.",
+        cta: "Access Now"
+      },
+      fr: {
+        title: "Vous êtes à un pas de quelque chose d'incroyable!",
+        text: "Cliquez ci-dessous pour découvrir ce que tout le monde apprécie.",
+        cta: "Accéder maintenant"
+      },
+      pt: {
+        title: "Você está a um passo de algo incrível!",
+        text: "Clique abaixo e veja o que todos estão curtindo.",
+        cta: "Acessar Agora"
+      }
     };
 
-    const lang = navigator.language.slice(0, 2);
-    const text = messages[lang] || messages["default"];
-    document.getElementById("message").innerText = text;
-
-    async function geoRedirect() {
-      try {
-        const res = await fetch("https://ipapi.co/json/");
-        const data = await res.json();
-        const country = data.country_code;
-
-        const urls = {
-          "US": "https://roclnow.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global",
-          "NG": "https://roclnow.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global",
-          "BR": "https://roclnow.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global",
-          "AO": "https://www.profitableratecpm.com/y8e064uw?key=163aa1a229d900a8ded967f53b6a45ca",
-          "FR": "https://roclnow.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global",
-          "default": "https://roclnow.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global"
-        };
-
-        const target = urls[country] || urls["default"];
-
-        // Redirección retardada para mejorar visibilidad (CPM)
-        setTimeout(() => {
-          window.location.href = target;
-        }, 1800);
-      } catch (e) {
-        console.warn("Geo detection failed", e);
-        window.location.href = "https://roclnow.com/?k=63523d54914e87a1a731af2a2ea5b55a&type=mainstream&subtype=global";
-      }
-    }
-
-    window.onload = geoRedirect;
+    const lang = (navigator.language || navigator.userLanguage).substr(0, 2).toLowerCase();
+    const content = translations[lang] || translations["en"];
+    
+    document.getElementById("title").innerText = content.title;
+    document.getElementById("text").innerText = content.text;
+    document.getElementById("cta").innerText = content.cta;
   </script>
+  <script id="_wauup1">var _wau = _wau || []; _wau.push(["small", "lonelywolfus", "up1"]);</script><script async src="//waust.at/s.js"></script>
 </body>
 </html>
+
